@@ -13,6 +13,7 @@ const Button = ({ children, ...props }) => {
     return (
         <button
             className={buttonStyles[props.type] || buttonStyles.default}
+            {...props}
         >
             {children}
         </button>
