@@ -1,11 +1,15 @@
 import React from 'react'
 
+// local components
+import Navbar from './components/Navbar/Navbar'
+
+// assets
+import styles from './App.module.css'
+
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+    <div className={styles.app}>
+      <Navbar />
     </div>
   )
 }
