@@ -1,9 +1,26 @@
 import React from 'react'
 
-const Button = () => {
+// third party libraries
+import PropTypes from 'prop-types'
+
+const buttonStyles = {
+    default: 'bg-blue-500 hover:bg-blue-700 hover:shadow-lg text-white font-bold py-2 px-4 rounded',
+    outline: 'bg-transparent hover:bg-blue-500 hover:shadow-lg text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded',
+    disabled: 'bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed'
+}
+
+const Button = ({ children, ...props }) => {
     return (
-        <div>Button</div>
+        <button
+            className={buttonStyles[props.type] || buttonStyles.default}
+        >
+            {children}
+        </button>
     )
+}
+
+Button.propTypes = {
+    type: PropTypes.oneOf(['default', 'outline', 'disabled'])
 }
 
 export default Button

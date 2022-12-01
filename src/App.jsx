@@ -14,7 +14,9 @@ const App = () => {
       <main className="w-11/12 max-w-7xl mx-auto">
         <div className="flex flex-col items-center justify-center w-full mt-24">
           <h3 className="text-lg mb-16">Pritisnite gumb niže kako biste pokrenuli</h3>
-          <Button />
+          <Button>
+            Pokreni konfigurator
+          </Button>
         </div>
       </main>
     </div>
