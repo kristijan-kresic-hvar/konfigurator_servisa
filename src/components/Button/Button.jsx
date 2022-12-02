@@ -21,6 +21,7 @@ const Button = ({ children, ...props }) => {
 }
 
 Button.propTypes = {
+    children: PropTypes.node.isRequired,
     type: PropTypes.oneOf(['default', 'outline', 'disabled'])
 }
 
