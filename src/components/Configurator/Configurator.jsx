@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 
 // local components
 import Button from '../Button/Button'
@@ -12,17 +12,38 @@ import Success from './steps/Success/Success'
 const Configurator = () => {
 
     const [activeStep, setActiveStep] = useState(1)
+    const [formData, setFormData] = useState({
+        model_vozila: '',
+        paket_usluga: [],
+        kontakt_podaci: {
+            puno_ime: '',
+            broj_telefona: '',
+            email: '',
+            napomena: ''
+        }
+    })
 
     const renderStep = () => {
         switch (activeStep) {
             case 1:
-                return <VehicleManufacturer />
+                return <VehicleManufacturer
+                    formData={formData}
+                    setFormData={setFormData}
+                />
             case 2:
-                return <ServicePackages />
+                return <ServicePackages
+                    formData={formData}
+                    setFormData={setFormData}
+                />
             case 3:
-                return <ContactData />
+                return <ContactData
+                    formData={formData}
+                    setFormData={setFormData}
+                />
             case 4:
-                return <Overview />
+                return <Overview
+                    formData={formData}
+                />
             case 5:
                 return <Success />
         }
@@ -34,6 +55,7 @@ const Configurator = () => {
                 return (
                     <Button
                         onClick={nextStep}
+                        type="button"
                     >
                         Dalje
                     </Button>
@@ -44,13 +66,15 @@ const Configurator = () => {
                     <>
                         <Button
                             onClick={prevStep}
-                            type="outline"
+                            variant="outline"
+                            type="button"
                         >
                             Nazad
                         </Button>
                         <Button
                             style={{ marginLeft: '1rem' }}
-                            onClick={nextStep}
+                            onClick={(e) => { e.preventDefault(); nextStep() }}
+                            type="button"
                         >
                             Dalje
                         </Button>
@@ -61,13 +85,13 @@ const Configurator = () => {
                     <>
                         <Button
                             onClick={prevStep}
-                            type="outline"
+                            variant="outline"
+                            type="button"
                         >
                             Nazad
                         </Button>
                         <Button
                             type="submit"
-                            onClick={handleSubmit}
                             style={{ marginLeft: '1rem' }}
                         >
                             Pošalji
