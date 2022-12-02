@@ -19,13 +19,13 @@ const Modal = ({ children, title, isOpen, onClose }) => {
             onClick={handleModalClick}
         >
             <div
-                className="bg-white w-5/6 h-5/6 md:w-4/6 md:h-4/6 relative animate-fade min-h-[500px]"
+                className="bg-white w-5/6 h-5/6 md:w-4/6 md:h-4/6 relative animate-fade max-w-[1200px] min-h-[500px]"
             >
-                <h2
+                <h4
                     className="mt-3 text-center text-xl"
                 >
                     {title}
-                </h2>
+                </h4>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none" viewBox="0 0 24 24"
