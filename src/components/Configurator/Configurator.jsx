@@ -56,6 +56,7 @@ const Configurator = () => {
                     <Button
                         onClick={nextStep}
                         type="button"
+                        variant={formData.model_vozila ? 'default' : 'disabled'}
                     >
                         Dalje
                     </Button>
