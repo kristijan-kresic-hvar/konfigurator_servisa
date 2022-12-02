@@ -12,7 +12,7 @@ const buttonStyles = {
 const Button = ({ children, ...props }) => {
     return (
         <button
-            className={buttonStyles[props.type] || buttonStyles.default}
+            className={buttonStyles[props.variant] || buttonStyles.default}
             {...props}
         >
             {children}
@@ -22,7 +22,7 @@ const Button = ({ children, ...props }) => {
 
 Button.propTypes = {
     children: PropTypes.node.isRequired,
-    type: PropTypes.oneOf(['default', 'outline', 'disabled'])
+    variant: PropTypes.oneOf(['default', 'outline', 'disabled'])
 }
 
 export default Button
