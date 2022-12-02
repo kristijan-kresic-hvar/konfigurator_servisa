@@ -4,10 +4,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const VehicleManufacturer = ({ formData, setFormData }) => {
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            model_vozila: e.target.value
+        })
+    }
+
     return (
         <div className="w-full mb-5">
             <h2 className="text-2xl mb-14 mt-7">Korak 1. Odaberite proizvođača vozila</h2>
-            <fieldset className="flex flex-wrap w-full gap-10" id="group1">
+            <fieldset
+                className="flex flex-wrap w-full gap-10"
+                id="group1"
+                onChange={handleChange}
+            >
                 <div
                     className="flex items-center mb-4"
                 >
@@ -16,6 +28,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="peugeot"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'peugeot'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -33,6 +46,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="volkswagen"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'volkswagen'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -50,6 +64,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="citroen"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'citroen'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -67,6 +82,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="audi"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'audi'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -84,6 +100,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="bmw"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'bmw'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -101,6 +118,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="seat"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'seat'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -118,6 +136,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="alfa_romeo"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'alfa_romeo'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -135,6 +154,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="kia"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'kia'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -152,6 +172,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="hyundai"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'hyundai'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -169,6 +190,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="honda"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'honda'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -186,6 +208,7 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                         type="radio"
                         value="toyota"
                         name="manufacturer"
+                        checked={formData.model_vozila === 'toyota'}
                         className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
