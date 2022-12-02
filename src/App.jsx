@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Button from './components/Button/Button'
 import Modal from './components/Modal/Modal'
+import Configurator from './components/Configurator/Configurator'
 
 // assets
 import styles from './App.module.css'
@@ -29,7 +30,7 @@ const App = () => {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(prevState => !prevState)}
         >
-          Hello
+          <Configurator />
         </Modal>
       </main>
     </div>
