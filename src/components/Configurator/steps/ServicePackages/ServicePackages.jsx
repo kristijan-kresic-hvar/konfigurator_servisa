@@ -54,98 +54,98 @@ const ServicePackages = ({ formData, setFormData }) => {
                 id="servicePackages"
             >
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="zamjena_ulja_i_filtera"
                         type="checkbox"
                         data-label="Zamjena ulja i filtera"
                         value={500}
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
-                        for="zamjena_ulja_i_filtera"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="zamjena_ulja_i_filtera"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Zamjena ulja i filtera (500kn)
                     </label>
                 </div>
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="promjena_pakni"
                         type="checkbox"
                         value={450}
                         data-label="Promjena pakni"
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="promjena_pakni"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="promjena_pakni"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Promjena pakni (450kn)
                     </label>
                 </div>
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="promjena_guma"
                         type="checkbox"
                         value={100}
                         data-label="Promjena guma"
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="promjena_guma"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="promjena_guma"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Promjena guma (100kn)
                     </label>
                 </div>
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="servis_klima_uredaja"
                         type="checkbox"
                         value={299}
                         data-label="Servis klima uređaja"
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="servis_klima_uredaja"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="servis_klima_uredaja"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Servis klima uređaja (299kn)
                     </label>
                 </div>
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="balansiranje_guma"
                         type="checkbox"
                         value={50}
                         data-label="Balansiranje guma"
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="balansiranje_guma"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="balansiranje_guma"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Balansiranje guma (50kn)
                     </label>
                 </div>
                 <div
-                    class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
+                    className="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
                         id="zamjena_ulja_u_kocnicama"
                         type="checkbox"
                         value={229}
                         data-label="Zamjena ulja u kočnicama"
                         onChange={handleChange}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
+                        className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="zamjena_ulja_u_kocnicama"
-                        class="ml-2 text-sm font-medium text-gray-900">
+                        htmlFor="zamjena_ulja_u_kocnicama"
+                        className="ml-2 text-sm font-medium text-gray-900">
                         Zamjena ulja u kočnicama (229kn)
                     </label>
                 </div>
@@ -168,7 +168,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                                 ref={couponCodeRef}
                                 type="text"
                                 id="couponCode"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Unesite kod kupona ovdje"
                             />
                             <Button
