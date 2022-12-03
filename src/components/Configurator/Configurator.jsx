@@ -75,6 +75,7 @@ const Configurator = () => {
                         <Button
                             style={{ marginLeft: '1rem' }}
                             onClick={(e) => { e.preventDefault(); nextStep() }}
+                            variant={formData.paket_usluga.length ? 'default' : 'disabled'}
                             type="button"
                         >
                             Dalje
@@ -121,8 +122,10 @@ const Configurator = () => {
                 {renderStep()}
 
                 {activeStep < 5 &&
-                    <div className="w-full mt-auto flex justify-end border-t-4 pt-3">
-                        {renderActions()}
+                    <div className="w-full mt-auto flex justify-end border-t-4">
+                        <div className="my-3">
+                            {renderActions()}
+                        </div>
                     </div>
                 }
             </form>
