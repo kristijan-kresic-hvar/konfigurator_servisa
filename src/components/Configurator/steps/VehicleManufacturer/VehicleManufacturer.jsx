@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 const VehicleManufacturer = ({ formData, setFormData }) => {
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
+        setFormData(prevState => ({
+            ...prevState,
             model_vozila: e.target.value
-        })
+        }))
     }
 
     return (
