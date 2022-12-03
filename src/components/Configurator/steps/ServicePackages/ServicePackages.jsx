@@ -21,16 +21,33 @@ const ServicePackages = ({ formData, setFormData }) => {
     const [couponStatus, setCouponStatus] = useState('')
 
     const handleChange = (e) => {
-        setFormData(prevState => ({
-            ...prevState,
-            paket_usluga: [
-                ...prevState.paket_usluga,
-                {
-                    label: e.target.getAttribute('data-label'),
-                    price: Number(e.target.value)
+
+        // check if service is already selected, if it is, remove it from the array
+        if (formData.paket_usluga.some(item => item.id === e.target.id)) {
+            setFormData(prevState => {
+                return {
+                    ...prevState,
+                    paket_usluga: prevState.paket_usluga.filter(item => item.id !== e.target.id)
                 }
-            ]
-        }))
+            })
+
+            return
+        }
+
+        // if service is not selected, add it to the array
+        setFormData(prevState => {
+            return {
+                ...prevState,
+                paket_usluga: [
+                    ...prevState.paket_usluga,
+                    {
+                        id: e.target.id,
+                        label: e.target.getAttribute('data-label'),
+                        price: Number(e.target.value)
+                    }
+                ]
+            }
+        })
     }
 
     const handleApplyCoupon = () => {
@@ -61,6 +78,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         data-label="Zamjena ulja i filtera"
                         value={500}
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Zamjena ulja i filtera')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
@@ -77,6 +95,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         value={450}
                         data-label="Promjena pakni"
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Promjena pakni')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
@@ -93,6 +112,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         value={100}
                         data-label="Promjena guma"
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Promjena guma')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
@@ -109,6 +129,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         value={299}
                         data-label="Servis klima uređaja"
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Servis klima uređaja')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
@@ -125,6 +146,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         value={50}
                         data-label="Balansiranje guma"
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Balansiranje guma')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
@@ -141,6 +163,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                         value={229}
                         data-label="Zamjena ulja u kočnicama"
                         onChange={handleChange}
+                        checked={formData.paket_usluga.some(item => item.label === 'Zamjena ulja u kočnicama')}
                         className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
