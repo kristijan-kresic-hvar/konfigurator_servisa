@@ -21,10 +21,16 @@ const ServicePackages = ({ formData, setFormData }) => {
     const [couponStatus, setCouponStatus] = useState('')
 
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            model_vozila: e.target.value
-        })
+        setFormData(prevState => ({
+            ...prevState,
+            paket_usluga: [
+                ...prevState.paket_usluga,
+                {
+                    label: e.target.getAttribute('data-label'),
+                    price: Number(e.target.value)
+                }
+            ]
+        }))
     }
 
     const handleApplyCoupon = () => {
@@ -45,19 +51,20 @@ const ServicePackages = ({ formData, setFormData }) => {
             <h2 className="text-2xl mb-14 mt-7">Korak 2. Odaberite jednu ili više usluga za koje ste</h2>
             <fieldset
                 className="flex flex-wrap w-full"
-                id="group1"
-                onChange={handleChange}
+                id="servicePackages"
             >
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="zamjena_ulja_i_filtera"
                         type="checkbox"
-                        value=""
+                        data-label="Zamjena ulja i filtera"
+                        value={500}
+                        onChange={handleChange}
                         class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
+                        for="zamjena_ulja_i_filtera"
                         class="ml-2 text-sm font-medium text-gray-900">
                         Zamjena ulja i filtera (500kn)
                     </label>
@@ -65,70 +72,80 @@ const ServicePackages = ({ formData, setFormData }) => {
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="promjena_pakni"
                         type="checkbox"
-                        value=""
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value={450}
+                        data-label="Promjena pakni"
+                        onChange={handleChange}
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        for="promjena_pakni"
+                        class="ml-2 text-sm font-medium text-gray-900">
                         Promjena pakni (450kn)
                     </label>
                 </div>
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="promjena_guma"
                         type="checkbox"
-                        value=""
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value={100}
+                        data-label="Promjena guma"
+                        onChange={handleChange}
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        for="promjena_guma"
+                        class="ml-2 text-sm font-medium text-gray-900">
                         Promjena guma (100kn)
                     </label>
                 </div>
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="servis_klima_uredaja"
                         type="checkbox"
-                        value=""
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value={299}
+                        data-label="Servis klima uređaja"
+                        onChange={handleChange}
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        for="servis_klima_uredaja"
+                        class="ml-2 text-sm font-medium text-gray-900">
                         Servis klima uređaja (299kn)
                     </label>
                 </div>
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="balansiranje_guma"
                         type="checkbox"
-                        value=""
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value={50}
+                        data-label="Balansiranje guma"
+                        onChange={handleChange}
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        for="balansiranje_guma"
+                        class="ml-2 text-sm font-medium text-gray-900">
                         Balansiranje guma (50kn)
                     </label>
                 </div>
                 <div
                     class="flex items-center mb-4 basis-full md:basis-3/6 lg:basis-1/3">
                     <input
-                        id="default-checkbox"
+                        id="zamjena_ulja_u_kocnicama"
                         type="checkbox"
-                        value=""
-                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                        value={229}
+                        data-label="Zamjena ulja u kočnicama"
+                        onChange={handleChange}
+                        class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                     />
                     <label
-                        for="default-checkbox"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        for="zamjena_ulja_u_kocnicama"
+                        class="ml-2 text-sm font-medium text-gray-900">
                         Zamjena ulja u kočnicama (229kn)
                     </label>
                 </div>

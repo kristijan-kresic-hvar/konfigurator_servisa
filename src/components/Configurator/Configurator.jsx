@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react'
+import React, { useState } from 'react'
 
 // local components
 import Button from '../Button/Button'
@@ -115,6 +115,8 @@ const Configurator = () => {
     const prevStep = () => {
         setActiveStep(prevState => prevState - 1)
     }
+
+    console.log(formData, "FORM DATA")
 
     return (
         <div className="w-11/12 h-5/6 mx-auto mt-3">
