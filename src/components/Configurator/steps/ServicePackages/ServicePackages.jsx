@@ -174,7 +174,7 @@ const ServicePackages = ({ formData, setFormData }) => {
                 </div>
             </fieldset>
             <div
-                className="ml-auto mt-auto pt-5"
+                className="flex flex-col justify-end ml-auto mt-auto pt-5"
             >
                 {!showCouponInput &&
                     <p
@@ -204,7 +204,12 @@ const ServicePackages = ({ formData, setFormData }) => {
                         {couponStatus && <p className={`text-xs py-1 ${discountAmount ? 'text-green-600' : 'text-red-600'}`}>{couponStatus}</p>}
                     </>
                 }
-                <TotalCalculator />
+                <div className="ml-auto mt-3">
+                    <TotalCalculator
+                        items={formData.paket_usluga}
+                        discountAmount={discountAmount}
+                    />
+                </div>
             </div>
         </div>
     )
