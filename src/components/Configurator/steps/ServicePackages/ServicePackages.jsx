@@ -64,7 +64,7 @@ const ServicePackages = ({ formData, setFormData }) => {
     }
 
     return (
-        <div className="flex flex-col w-full h-full mb-3">
+        <div className="flex flex-col w-full h-full mb-5">
             <h2 className="text-2xl mb-14 mt-7">Korak 2. Odaberite jednu ili više usluga za koje ste</h2>
             <fieldset
                 className="flex flex-wrap w-full"
