@@ -15,10 +15,10 @@ const Configurator = () => {
     const [formData, setFormData] = useState({
         model_vozila: '',
         paket_usluga: [],
-        kontakt_podaci: {
+        kontakt_podatci: {
             puno_ime: '',
             broj_telefona: '',
-            email: '',
+            email_adresa: '',
             napomena: ''
         }
     })
@@ -62,6 +62,25 @@ const Configurator = () => {
                     </Button>
                 )
             case 2:
+                return (
+                    <>
+                        <Button
+                            onClick={prevStep}
+                            variant="outline"
+                            type="button"
+                        >
+                            Nazad
+                        </Button>
+                        <Button
+                            style={{ marginLeft: '1rem' }}
+                            onClick={nextStep}
+                            variant={formData.paket_usluga.length ? 'default' : 'disabled'}
+                            type="button"
+                        >
+                            Dalje
+                        </Button>
+                    </>
+                )
             case 3:
                 return (
                     <>
@@ -75,7 +94,12 @@ const Configurator = () => {
                         <Button
                             style={{ marginLeft: '1rem' }}
                             onClick={(e) => { e.preventDefault(); nextStep() }}
-                            variant={formData.paket_usluga.length ? 'default' : 'disabled'}
+                            variant={
+                                (formData.kontakt_podatci.puno_ime &&
+                                    formData.kontakt_podatci.broj_telefona &&
+                                    formData.kontakt_podatci.email_adresa) ?
+                                    "default" : "disabled"
+                            }
                             type="button"
                         >
                             Dalje
