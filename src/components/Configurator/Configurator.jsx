@@ -20,7 +20,8 @@ const Configurator = () => {
             broj_telefona: '',
             email_adresa: '',
             napomena: ''
-        }
+        },
+        popust: 0
     })
 
     const renderStep = () => {

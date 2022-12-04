@@ -17,7 +17,6 @@ const ServicePackages = ({ formData, setFormData }) => {
     const couponCodeRef = useRef(null)
 
     const [showCouponInput, setShowCouponInput] = useState(false)
-    const [discountAmount, setDiscountAmount] = useState(0)
     const [couponStatus, setCouponStatus] = useState('')
 
     const handleChange = (e) => {
@@ -53,14 +52,20 @@ const ServicePackages = ({ formData, setFormData }) => {
     const handleApplyCoupon = () => {
         if (couponCodeRef.current) {
             if (couponCodeRef.current.value === coupon_code_allowed.code) {
-                setDiscountAmount(coupon_code_allowed.amount)
+                setFormData(prevState => ({
+                    ...prevState,
+                    popust: coupon_code_allowed.amount
+                }))
                 setCouponStatus('Kupon je uspješno primjenjen')
                 return
             }
         }
 
         setCouponStatus('Kupon nije validan')
-        setDiscountAmount(0)
+        setFormData(prevState => ({
+            ...prevState,
+            popust: 0
+        }))
     }
 
     return (
@@ -201,13 +206,13 @@ const ServicePackages = ({ formData, setFormData }) => {
                                 Primjeni
                             </Button>
                         </div>
-                        {couponStatus && <p className={`text-xs py-1 ${discountAmount ? 'text-green-600' : 'text-red-600'}`}>{couponStatus}</p>}
+                        {couponStatus && <p className={`text-xs py-1 ${formData.popust ? 'text-green-600' : 'text-red-600'}`}>{couponStatus}</p>}
                     </>
                 }
                 <div className="ml-auto mt-3">
                     <TotalCalculator
                         items={formData.paket_usluga}
-                        discountAmount={discountAmount}
+                        discountAmount={formData.popust}
                     />
                 </div>
             </div>
