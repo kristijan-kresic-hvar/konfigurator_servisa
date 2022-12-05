@@ -3,7 +3,13 @@ import React from 'react'
 // third party libraries
 import PropTypes from 'prop-types'
 
+// local functions
+import useMockData from '../../../../hooks/useMockData'
+
 const VehicleManufacturer = ({ formData, setFormData }) => {
+
+    const { getVehicleManufacturers } = useMockData()
+    const vehicleManufacturers = getVehicleManufacturers()
 
     const handleChange = (e) => {
         setFormData(prevState => ({
@@ -19,215 +25,28 @@ const VehicleManufacturer = ({ formData, setFormData }) => {
                 className="flex flex-wrap w-full gap-10"
                 id="group1"
             >
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="peugeot"
-                        type="radio"
-                        value="peugeot"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'peugeot'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="peugeot"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
+                {vehicleManufacturers.map(manufacturer => (
+                    <div
+                        className="flex items-center mb-4"
+                        key={manufacturer.id}
                     >
-                        Peugeot
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="volkswagen"
-                        type="radio"
-                        value="volkswagen"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'volkswagen'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="volkswagen"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Volkswagen
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="citroen"
-                        type="radio"
-                        value="citroen"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'citroen'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="citroen"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Citroen
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="audi"
-                        type="radio"
-                        value="audi"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'audi'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="audi"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Audi
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="bmw"
-                        type="radio"
-                        value="bmw"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'bmw'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="bmw"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Bmw
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="seat"
-                        type="radio"
-                        value="seat"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'seat'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="seat"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Seat
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="alfa_romeo"
-                        type="radio"
-                        value="alfa_romeo"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'alfa_romeo'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="alfa_romeo"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Alfa Romeo
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="kia"
-                        type="radio"
-                        value="kia"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'kia'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="kia"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Kia
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="hyundai"
-                        type="radio"
-                        value="hyundai"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'hyundai'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="hyundai"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Hyundai
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="honda"
-                        type="radio"
-                        value="honda"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'honda'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="honda"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Honda
-                    </label>
-                </div>
-                <div
-                    className="flex items-center mb-4"
-                >
-                    <input
-                        id="toyota"
-                        type="radio"
-                        value="toyota"
-                        name="manufacturer"
-                        checked={formData.model_vozila === 'toyota'}
-                        onChange={handleChange}
-                        className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
-                    />
-                    <label
-                        htmlFor="toyota"
-                        className="w-max ml-2 text-sm font-medium text-gray-900"
-                    >
-                        Toyota
-                    </label>
-                </div>
+                        <input
+                            id={manufacturer.id}
+                            type="radio"
+                            value={manufacturer.value}
+                            name="manufacturer"
+                            checked={formData.model_vozila === manufacturer.value}
+                            onChange={handleChange}
+                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2"
+                        />
+                        <label
+                            htmlFor={manufacturer.id}
+                            className="w-max ml-2 text-sm font-medium text-gray-900"
+                        >
+                            {manufacturer.label}
+                        </label>
+                    </div>
+                ))}
             </fieldset>
         </div>
     )
