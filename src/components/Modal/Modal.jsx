@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 const Modal = ({ children, title, isOpen, onClose }) => {
 
     const handleModalClick = (e) => {
-        if (e.target.getAttribute('data-type') === 'modal-overlay') {
+        if (e.target.getAttribute('data-type') === 'modal-overlay' ||
+            e.target.getAttribute('data-role') === 'closeModal') {
             onClose()
         }
     }
