@@ -142,8 +142,6 @@ const Configurator = () => {
         setActiveStep(prevState => prevState - 1)
     }
 
-    console.log(formData, "FORM DATA")
-
     return (
         <div className="w-[89%] h-[89%] mx-auto mt-3">
             <form className="flex h-full flex-col w-full" onSubmit={handleSubmit}>
