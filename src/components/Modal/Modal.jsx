@@ -19,7 +19,7 @@ const Modal = ({ children, title, isOpen, onClose }) => {
             onClick={handleModalClick}
         >
             <div
-                className="bg-white w-5/6 h-5/6 md:w-4/6 md:h-4/6 relative animate-fade max-w-[1200px] min-h-[500px] overflow-y-auto"
+                className="bg-white w-5/6 h-5/6 md:w-4/6 md:h-4/6 relative animate-fade max-w-[1200px] max-h-[95%] min-h-[550px] overflow-y-auto"
             >
                 <h4
                     className="mt-3 text-center text-xl"

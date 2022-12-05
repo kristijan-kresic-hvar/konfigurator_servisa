@@ -44,6 +44,7 @@ const Configurator = () => {
             case 4:
                 return <Overview
                     formData={formData}
+                    setActiveStep={setActiveStep}
                 />
             case 5:
                 return <Success />
@@ -144,7 +145,7 @@ const Configurator = () => {
     console.log(formData, "FORM DATA")
 
     return (
-        <div className="w-11/12 h-5/6 mx-auto mt-3">
+        <div className="w-[89%] h-[89%] mx-auto mt-3">
             <form className="flex h-full flex-col w-full" onSubmit={handleSubmit}>
                 {renderStep()}
 

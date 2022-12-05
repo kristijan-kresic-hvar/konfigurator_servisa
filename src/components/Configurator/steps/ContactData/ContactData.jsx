@@ -20,7 +20,7 @@ const ContactData = ({ formData, setFormData }) => {
         <div className="w-full mb-3">
             <h2 className="text-2xl mb-7 mt-7">Korak 3. Vaši kontakt podatci</h2>
             <fieldset
-                className="flex flex-wrap w-[80%] mx-auto"
+                className="flex flex-wrap w-[90%] md:w-[80%] mx-auto"
                 id="contactData"
             >
                 <div class="flex flex-wrap w-full mb-3">
