@@ -7,7 +7,7 @@ Version 1.0
 # Local Project setup
 
 ```shell
-https://github.com/kristijan-kresic-hvar/konfigurator_servisa.git
+git clone https://github.com/kristijan-kresic-hvar/konfigurator_servisa.git
 
 cd konfigurator_servisa
 
